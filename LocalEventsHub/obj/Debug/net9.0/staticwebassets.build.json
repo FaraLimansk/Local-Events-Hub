@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Pr3L8scUMQO8CKCXMh8EbJBhKzcb+PIS4LZhakUVeJ4=",
+  "Source": "LocalEventsHub",
+  "BasePath": "_content/LocalEventsHub",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
