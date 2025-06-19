@@ -1,5 +1,8 @@
-namespace DefaultNamespace;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore; // для ToListAsync()
+using System.Linq; // для LINQ-методов, как Where, OrderBy и т.д.
+namespace DefaultNamespace;
+
 
 [ApiController]
 [Route("api/[controller]")]
@@ -17,8 +20,8 @@ public class ActionsController : ControllerBase
     public async Task<IActionResult> GetModeratorActions(int moderatorId)
     {
         var actions = await _context.Actions
-            .Where(a => a.ModeratorId == moderatorId)
-            .OrderByDescending(a => a.ActionDate)
+            .Where(a => a.UserId == moderatorId) // если модератор — это пользователь
+            .OrderByDescending(a => a.Timestamp) // используем существующее поле
             .ToListAsync();
 
         return Ok(actions);
