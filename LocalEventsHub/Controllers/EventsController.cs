@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using LocalEventsHub.Data;
+using LocalEventsHub.Models.Entities;
 
 [ApiController]
 [Route("api/[controller]")]
@@ -13,12 +13,12 @@ public class EventsController : ControllerBase
         _context = context;
     }
 
-    // 1. Мероприятия по категории
-    [HttpGet("by-category")]
-    public async Task<IActionResult> GetEventsByCategory([FromQuery] string category)
+    // 1. Поиск мероприятий по названию (вместо категории)
+    [HttpGet("by-title")]
+    public async Task<IActionResult> GetEventsByTitle([FromQuery] string title)
     {
         var events = await _context.Events
-            .Where(e => e.Category == category)
+            .Where(e => e.Title.Contains(title))
             .ToListAsync();
 
         return Ok(events);
@@ -29,11 +29,11 @@ public class EventsController : ControllerBase
     public async Task<IActionResult> GetUpcomingEvents()
     {
         var events = await _context.Events
-            .Where(e => e.EventDate > DateTime.UtcNow)
+            .Where(e => e.Date > DateTime.UtcNow)
             .Select(e => new
             {
                 e.Title,
-                e.EventDate,
+                e.Date,
                 ParticipantCount = _context.EventRegistrations.Count(er => er.EventId == e.EventId)
             })
             .ToListAsync();
@@ -41,26 +41,26 @@ public class EventsController : ControllerBase
         return Ok(events);
     }
 
-    // 3. Поиск событий по дате и месту
-    [HttpGet("search")]
-    public async Task<IActionResult> SearchEvents([FromQuery] DateTime date, [FromQuery] string location)
+    // 3. Поиск событий по дате
+    [HttpGet("search-by-date")]
+    public async Task<IActionResult> SearchEventsByDate([FromQuery] DateTime date)
     {
         var events = await _context.Events
-            .Where(e => e.EventDate.Date == date.Date && e.Location.Contains(location))
+            .Where(e => e.Date.Date == date.Date)
             .ToListAsync();
 
         return Ok(events);
     }
 
-    // 4. Популярные категории
-    [HttpGet("popular-categories")]
-    public async Task<IActionResult> GetPopularCategories()
+    // 4. Часто используемые даты (вместо популярных категорий)
+    [HttpGet("popular-dates")]
+    public async Task<IActionResult> GetPopularDates()
     {
         var result = await _context.Events
-            .GroupBy(e => e.Category)
+            .GroupBy(e => e.Date.Date)
             .Select(g => new
             {
-                Category = g.Key,
+                Date = g.Key,
                 Count = g.Count()
             })
             .OrderByDescending(x => x.Count)
@@ -70,22 +70,22 @@ public class EventsController : ControllerBase
         return Ok(result);
     }
 
-    // 5. Проверка дублей событий
+    // 5. Проверка дублей по названию и дате
     [HttpPost("check-duplicate")]
     public async Task<IActionResult> CheckDuplicate([FromQuery] string title, [FromQuery] DateTime date)
     {
         var exists = await _context.Events
-            .AnyAsync(e => e.Title == title && e.EventDate.Date == date.Date);
+            .AnyAsync(e => e.Title == title && e.Date.Date == date.Date);
 
         return Ok(new { Duplicate = exists });
     }
 
-    // 6. Закрытие регистрации (встроенная проверка)
+    // 6. Регистрация пользователя на мероприятие
     [HttpPost("register")]
     public async Task<IActionResult> RegisterUser([FromQuery] int userId, [FromQuery] int eventId)
     {
         var evt = await _context.Events.FindAsync(eventId);
-        if (evt == null || evt.EventDate < DateTime.UtcNow)
+        if (evt == null || evt.Date < DateTime.UtcNow)
             return BadRequest("Регистрация закрыта");
 
         var alreadyRegistered = await _context.EventRegistrations
