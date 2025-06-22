@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using LEH.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace LEH;
 

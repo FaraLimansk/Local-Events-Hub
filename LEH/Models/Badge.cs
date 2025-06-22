@@ -1,11 +1,11 @@
-﻿namespace LEH.Models;
+namespace LEH.Models;
 
-public class Role
+public class Badge
 {
-    public int RoleId { get; set; }
+    public int BadgeId { get; set; }
     public string Name { get; set; }
     public string Description { get; set; }
 
     // Навигационные свойства
-    public ICollection<UserRole> UserRoles { get; set; }
+    public ICollection<UserBadge> UserBadges { get; set; }
 }
