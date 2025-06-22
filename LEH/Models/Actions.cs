@@ -2,6 +2,7 @@ namespace LEH.Models;
 
 public class Actions
 {
+        
         public int ActionId { get; set; }
         public string TargetObject { get; set; }
         public string OperatorLogId { get; set; }
