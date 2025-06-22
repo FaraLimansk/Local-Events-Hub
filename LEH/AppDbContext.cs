@@ -16,16 +16,31 @@ public class AppDbContext : DbContext
     public DbSet<UserBadge> UserBadges { get; set; }
     public DbSet<Notification> Notifications { get; set; }
     public DbSet<Challenge> Challenges { get; set; }
-    public DbSet<Action> Actions { get; set; }
+    public DbSet<UserAction> Actions { get; set; }
     public DbSet<Feedback> Feedbacks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        // Конфигурация отношений и ограничений
+        // Конфигурация EventRegistration
+        modelBuilder.Entity<EventRegistration>()
+            .HasKey(er => er.RegistrationId); // Явное указание первичного ключа
+
+        // Конфигурация связей многие-ко-многим
         modelBuilder.Entity<UserRole>()
             .HasKey(ur => new { ur.UserId, ur.RoleId });
             
         modelBuilder.Entity<UserBadge>()
             .HasKey(ub => new { ub.UserId, ub.BadgeId });
+
+        // Опционально: настройка связей
+        modelBuilder.Entity<EventRegistration>()
+            .HasOne(er => er.User)
+            .WithMany(u => u.EventRegistrations)
+            .HasForeignKey(er => er.UserId);
+
+        modelBuilder.Entity<EventRegistration>()
+            .HasOne(er => er.Event)
+            .WithMany(e => e.EventRegistrations)
+            .HasForeignKey(er => er.EventId);
     }
 }

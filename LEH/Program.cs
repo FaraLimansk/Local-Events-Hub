@@ -30,5 +30,20 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
-
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    
+    try 
+    {
+        // Попытка выполнить простой запрос
+        var usersCount = dbContext.Users.Count();
+        Console.WriteLine($"В базе {usersCount} пользователей.");
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Ошибка доступа к БД: {ex.Message}");
+    }
+}
 app.Run();
+
