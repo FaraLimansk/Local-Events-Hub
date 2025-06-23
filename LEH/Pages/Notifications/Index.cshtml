@@ -1,0 +1,82 @@
+@page
+@model LEH.Pages.Notifications.IndexModel
+@{
+    ViewData["Title"] = "Уведомления";
+}
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Уведомления</h1>
+        <a asp-page="Create" class="btn btn-success">
+            <i class="bi bi-plus-circle me-2"></i>Новое уведомление
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-striped">
+            <thead class="table-dark">
+            <tr>
+                <th>Тип</th>
+                <th>Сообщение</th>
+                <th>Статус</th>
+                <th>Дата</th>
+                <th>Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var n in Model.Notifications)
+            {
+                <tr>
+                    <td>
+                            <span class="badge @GetBadgeClass(n.Type)">
+                                @n.Type
+                            </span>
+                    </td>
+                    <td>@n.Message</td>
+                    <td>
+                            <span class="badge @(n.Status == "read" ? "bg-success" : "bg-warning text-dark")">
+                                @(n.Status == "read" ? "Прочитано" : "Новое")
+                            </span>
+                    </td>
+                    <td>@n.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>
+                        <a href="#" class="btn btn-sm btn-outline-primary" title="Просмотр">
+                            <i class="bi bi-eye"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@functions {
+    string GetBadgeClass(string type)
+    {
+        return type switch
+        {
+            "Важное" => "bg-danger",
+            "Информационное" => "bg-info text-dark",
+            _ => "bg-secondary"
+        };
+    }
+}
+
+<style>
+    .table {
+        font-size: 0.9rem;
+    }
+    .badge {
+        font-size: 0.8em;
+        font-weight: 500;
+    }
+</style>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}

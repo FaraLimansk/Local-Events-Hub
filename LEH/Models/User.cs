@@ -1,10 +1,18 @@
 ﻿namespace LEH.Models;
+using System.ComponentModel.DataAnnotations;
 
 public class User
 {
         public int UserId { get; set; }
-        public string Email { get; set; }
+        
+        [Required]
+        [StringLength(100)]
         public string Username { get; set; }
+        
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
+        
         public DateTime RegistrationDate { get; set; } = DateTime.UtcNow;
         public bool IsActive { get; set; } = true;
 

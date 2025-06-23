@@ -1,0 +1,27 @@
+@page
+@model LEH.Pages.Users.IndexModel
+@{
+ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model.Users)
+    {
+    <tr>
+        <td>@user.Username</td>
+    </tr>
+    }
+    </tbody>
+</table>
