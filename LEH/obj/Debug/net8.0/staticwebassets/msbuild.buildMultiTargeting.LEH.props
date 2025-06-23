@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LEH.props" />
+</Project>
