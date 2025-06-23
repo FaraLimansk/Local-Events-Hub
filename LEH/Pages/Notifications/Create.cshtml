@@ -1,0 +1,44 @@
+@page
+@model LEH.Pages.Notifications.CreateModel
+@{
+ViewData["Title"] = "Создать уведомление";
+}
+
+<h2>Создать уведомление</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Notification.UserId" class="form-label">Пользователь (ID)</label>
+        <input asp-for="Notification.UserId" class="form-control" />
+        <span asp-validation-for="Notification.UserId" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notification.Type" class="form-label">Тип уведомления</label>
+        <input asp-for="Notification.Type" class="form-control" />
+        <span asp-validation-for="Notification.Type" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notification.Message" class="form-label">Сообщение</label>
+        <textarea asp-for="Notification.Message" class="form-control"></textarea>
+        <span asp-validation-for="Notification.Message" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notification.RelatedOperation" class="form-label">Операция (если есть)</label>
+        <input asp-for="Notification.RelatedOperation" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Notification.Comments" class="form-label">Комментарии</label>
+        <textarea asp-for="Notification.Comments" class="form-control"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Сохранить</button>
+    <a asp-page="Index" class="btn btn-secondary">Отмена</a>
+</form>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}

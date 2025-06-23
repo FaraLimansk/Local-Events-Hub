@@ -9,46 +9,68 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6f7b840-11e0-4bf0-864d-fe86e324ca3d" name="Changes" comment="" />
+    <list default="true" id="bd60f70c-d0c7-4b2a-bdf2-b69fc242bbdd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pages/Events/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Events/Create.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Notifications/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Notifications/Create.cshtml.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Users/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pages/Users/Index.cshtml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LEH.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LEH.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GlobalUsings.g.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.genruntimeconfig.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/LEH.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/LEH.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/bundle/LEH.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/bundle/LEH.styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/projectbundle/LEH.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/projectbundle/LEH.bundle.scp.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/LEH.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/LEH.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DpaMonitoringSettings">
-    <option name="firstShow" value="false" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "FaraLimansk"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/FaraLimansk/Local-Events-Hub.git",
-    "accountId": "d4bb565e-78b9-43af-8505-ec35e45e254c"
-  }
-}]]></component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/AppDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfo.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ivan/RiderProjects/Local-Events-Hub/LEH/obj/Debug/net8.0/LEH.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ivan/RiderProjects/Local-Events-Hub/LEH/obj/Debug/net8.0/LEH.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ivan/RiderProjects/Local-Events-Hub/LEH/obj/Debug/net8.0/LEH.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Ivan/RiderProjects/Local-Events-Hub/LEH/obj/Debug/net8.0/LEH.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
-  <component name="ProjectId" id="2ys9kZ5YyCdrOHwc6AwIoj8bbeL" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ysFis5J4cpzMiEIBjfUdEFIOQo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,26 +78,17 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     ".NET Launch Settings Profile.LEH: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.LEH: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Ivan/RiderProjects/Local-Events-Hub/LEH",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderIisExpressOptionsPageId",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
-    ]
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.LEH: http">
+  <component name="RunManager" selected=".NET Launch Settings Profile.LEH: IIS Express">
     <configuration name="LEH: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/LEH.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -125,30 +138,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6f7b840-11e0-4bf0-864d-fe86e324ca3d" name="Changes" comment="" />
-      <created>1750612557731</created>
+      <changelist id="bd60f70c-d0c7-4b2a-bdf2-b69fc242bbdd" name="Changes" comment="" />
+      <created>1750615506627</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1750612557731</updated>
-      <workItem from="1750612558894" duration="8722000" />
+      <updated>1750615506627</updated>
+      <workItem from="1750615508076" duration="221000" />
+      <workItem from="1750628355032" duration="918000" />
+      <workItem from="1750634001223" duration="5758000" />
     </task>
-    <task id="LOCAL-00001" summary="Этап 2 - Иваныч">
-      <option name="closed" value="true" />
-      <created>1750613913767</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1750613913767</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Этап 3 - Иваныч">
-      <option name="closed" value="true" />
-      <created>1750615141637</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1750615141637</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -157,10 +155,7 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Этап 1" />
-    <MESSAGE value="Этап 2 - Иваныч" />
-    <MESSAGE value="Этап 3 - Иваныч" />
-    <option name="LAST_COMMIT_MESSAGE" value="Этап 3 - Иваныч" />
   </component>
 </project>

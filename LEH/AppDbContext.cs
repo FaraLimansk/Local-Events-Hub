@@ -1,5 +1,6 @@
 ﻿using LEH.Models;
 using Microsoft.EntityFrameworkCore;
+using UserRole = LEH.Models.UserRole;
 
 namespace LEH;
 
