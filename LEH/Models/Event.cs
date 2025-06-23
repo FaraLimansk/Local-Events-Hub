@@ -1,16 +1,27 @@
-namespace LEH.Models;
+// Models/Event.cs
+using System.ComponentModel.DataAnnotations;
 
-public class Event
+namespace LEH.Models
 {
-    public int EventId { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public DateTime EventDate { get; set; }
-    public int? RouteId { get; set; }
-    public int? OrganizerId { get; set; }
-    public int? MaxParticipants { get; set; }
-
-    // Навигационные свойства
-    public ICollection<EventRegistration> EventRegistrations { get; set; } = new List<EventRegistration>();
-    public User Organizer { get; set; }
+    public class Event
+    {
+        public int EventId { get; set; }
+        
+        [Required]
+        public string Title { get; set; }
+        
+        public string Description { get; set; }
+        
+        [Required]
+        public DateTime EventDate { get; set; }  // Соответствует event_date в БД
+        
+        public int? RouteId { get; set; }  // Опционально, согласно БД
+        
+        [Required]
+        public int OrganizerId { get; set; }  // Внешний ключ
+        
+        public User Organizer { get; set; }
+        
+        public int? MaxParticipants { get; set; }  // nullable, как в БД
+    }
 }

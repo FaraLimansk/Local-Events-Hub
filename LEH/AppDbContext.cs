@@ -1,6 +1,5 @@
 ﻿using LEH.Models;
 using Microsoft.EntityFrameworkCore;
-using UserRole = LEH.Models.UserRole;
 
 namespace LEH;
 
@@ -24,7 +23,7 @@ public class AppDbContext : DbContext
     {
         // Конфигурация EventRegistration
         modelBuilder.Entity<EventRegistration>()
-            .HasKey(er => er.RegistrationId); // Явное указание первичного ключа
+            .HasKey(er => er.RegistrationId);
 
         // Конфигурация связей многие-ко-многим
         modelBuilder.Entity<UserRole>()
@@ -33,15 +32,49 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<UserBadge>()
             .HasKey(ub => new { ub.UserId, ub.BadgeId });
 
-        // Опционально: настройка связей
-        modelBuilder.Entity<EventRegistration>()
-            .HasOne(er => er.User)
-            .WithMany(u => u.EventRegistrations)
-            .HasForeignKey(er => er.UserId);
+        // ДОБАВЬТЕ ЭТУ КОНФИГУРАЦИЮ ДЛЯ NOTIFICATION
+        modelBuilder.Entity<Notification>()
+            .HasKey(n => n.NotificationId);
+            
+        modelBuilder.Entity<Notification>()
+            .HasOne(n => n.User)
+            .WithMany(u => u.Notifications)
+            .HasForeignKey(n => n.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-        modelBuilder.Entity<EventRegistration>()
-            .HasOne(er => er.Event)
-            .WithMany(e => e.EventRegistrations)
-            .HasForeignKey(er => er.EventId);
+        // Конфигурация строковых полей с ограничениями длины
+        modelBuilder.Entity<Notification>()
+            .Property(n => n.Type)
+            .HasMaxLength(50)
+            .IsRequired();
+            
+        modelBuilder.Entity<Notification>()
+            .Property(n => n.Message)
+            .HasMaxLength(1000)
+            .IsRequired();
+            
+        modelBuilder.Entity<Notification>()
+            .Property(n => n.Status)
+            .HasMaxLength(20)
+            .HasDefaultValue("unread");
+            
+        modelBuilder.Entity<Notification>()
+            .Property(n => n.RelatedOperation)
+            .HasMaxLength(100);
+            
+        modelBuilder.Entity<Notification>()
+            .Property(n => n.Comments)
+            .HasMaxLength(500);
+
+        // Конфигурация для Event
+        modelBuilder.Entity<Event>(entity =>
+        {
+            entity.HasKey(e => e.EventId);
+            entity.Property(e => e.EventDate).IsRequired();
+            entity.HasOne(e => e.Organizer)
+                .WithMany()
+                .HasForeignKey(e => e.OrganizerId)
+                .OnDelete(DeleteBehavior.Restrict);
+        });
     }
 }

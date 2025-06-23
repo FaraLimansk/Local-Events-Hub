@@ -40,32 +40,36 @@ namespace LEH.Pages.Notifications
         {
             if (!ModelState.IsValid)
             {
+                _logger.LogWarning("Модель не валидна: {@ModelState}", ModelState);
                 return Page();
             }
 
             try
             {
-                // Валидация пользователя
+                _logger.LogInformation("Попытка сохранить уведомление: {@Notification}", Notification);
+        
                 var userExists = await _context.Users.AnyAsync(u => u.UserId == Notification.UserId);
                 if (!userExists)
                 {
+                    _logger.LogWarning("Пользователь с ID {UserId} не найден", Notification.UserId);
                     ModelState.AddModelError("Notification.UserId", "Пользователь не найден");
                     return Page();
                 }
 
-                // Установка значений по умолчанию
                 Notification.CreatedAt = DateTime.UtcNow;
                 Notification.Status = string.IsNullOrEmpty(Notification.Status) ? "unread" : Notification.Status;
 
                 _context.Notifications.Add(Notification);
                 await _context.SaveChangesAsync();
+        
+                _logger.LogInformation("Уведомление успешно сохранено с ID {NotificationId}", Notification.NotificationId);
 
                 TempData["SuccessMessage"] = "Уведомление успешно создано!";
                 return RedirectToPage("./Index");
             }
             catch (DbUpdateException ex)
             {
-                _logger.LogError(ex, "Ошибка при сохранении уведомления");
+                _logger.LogError(ex, "Ошибка при сохранении уведомления. Внутреннее исключение: {InnerException}", ex.InnerException?.Message);
                 ModelState.AddModelError("", "Не удалось сохранить уведомление. Пожалуйста, попробуйте позже.");
                 return Page();
             }

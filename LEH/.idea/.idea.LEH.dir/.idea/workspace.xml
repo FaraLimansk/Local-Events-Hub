@@ -10,36 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd60f70c-d0c7-4b2a-bdf2-b69fc242bbdd" name="Changes" comment="added razor-pages">
-      <change afterPath="$PROJECT_DIR$/Pages/Users/Create.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pages/Users/Create.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LEH.dir/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LEH.dir/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LEH.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LEH.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Notifications/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Notifications/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Notifications/Create.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Notifications/Create.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Notifications/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Notifications/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/Event.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/Event.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pages/Notifications/Index.cshtml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Notifications/Index.cshtml.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pages/Users/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Pages/Users/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/LEH.staticwebassets.runtime.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GlobalUsings.g.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.GlobalUsings.g.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/LEH.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" afterDir="false" />
@@ -47,21 +27,6 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/LEH.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/LEH.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/rjsmcshtml.dswa.cache.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/rjsmrazor.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/rjsmrazor.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/rpswa.dswa.cache.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/rpswa.dswa.cache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/bundle/LEH.styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/bundle/LEH.styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/projectbundle/LEH.bundle.scp.css" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/scopedcss/projectbundle/LEH.bundle.scp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.endpoints.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/LEH.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/LEH.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/LEH.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +167,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750641158134</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added razor-pages">
+      <option name="closed" value="true" />
+      <created>1750663623858</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1750663623858</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
