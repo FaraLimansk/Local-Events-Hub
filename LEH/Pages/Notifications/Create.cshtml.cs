@@ -1,39 +1,79 @@
 using LEH.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
-namespace LEH.Pages.Notifications;
-
-public class CreateModel : PageModel
+namespace LEH.Pages.Notifications
 {
-    private readonly AppDbContext _context;
-
-    public CreateModel(AppDbContext context)
+    public class CreateModel : PageModel
     {
-        _context = context;
-    }
+        private readonly AppDbContext _context;
+        private readonly ILogger<CreateModel> _logger;
 
-    [BindProperty]
-    public Notification Notification { get; set; } = new();
-
-    public void OnGet()
-    {
-        // Можно предварительно подгрузить список пользователей, если нужно
-    }
-
-    public async Task<IActionResult> OnPostAsync()
-    {
-        if (!ModelState.IsValid)
+        public CreateModel(AppDbContext context, ILogger<CreateModel> logger)
         {
-            return Page();
+            _context = context;
+            _logger = logger;
         }
 
-        Notification.CreatedAt = DateTime.Now;
-        Notification.Status = string.IsNullOrEmpty(Notification.Status) ? "unread" : Notification.Status;
+        [BindProperty]
+        public Notification Notification { get; set; } = new();
 
-        _context.Notifications.Add(Notification);
-        await _context.SaveChangesAsync();
+        public async Task<IActionResult> OnGetAsync()
+        {
+            try
+            {
+                // Можно добавить предзаполнение данных, если нужно
+                Notification.CreatedAt = DateTime.UtcNow;
+                Notification.Status = "unread";
+                
+                return Page();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Ошибка при загрузке страницы создания уведомления");
+                return RedirectToPage("/Error");
+            }
+        }
 
-        return RedirectToPage("Index"); // или другой путь, куда ты хочешь вернуться
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
+            try
+            {
+                // Валидация пользователя
+                var userExists = await _context.Users.AnyAsync(u => u.UserId == Notification.UserId);
+                if (!userExists)
+                {
+                    ModelState.AddModelError("Notification.UserId", "Пользователь не найден");
+                    return Page();
+                }
+
+                // Установка значений по умолчанию
+                Notification.CreatedAt = DateTime.UtcNow;
+                Notification.Status = string.IsNullOrEmpty(Notification.Status) ? "unread" : Notification.Status;
+
+                _context.Notifications.Add(Notification);
+                await _context.SaveChangesAsync();
+
+                TempData["SuccessMessage"] = "Уведомление успешно создано!";
+                return RedirectToPage("./Index");
+            }
+            catch (DbUpdateException ex)
+            {
+                _logger.LogError(ex, "Ошибка при сохранении уведомления");
+                ModelState.AddModelError("", "Не удалось сохранить уведомление. Пожалуйста, попробуйте позже.");
+                return Page();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Неожиданная ошибка при создании уведомления");
+                return RedirectToPage("/Error");
+            }
+        }
     }
 }

@@ -1,46 +1,56 @@
 using LEH;
+using LEH.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 1. Add Razor Pages
+// 1. Конфигурация сервисов ДО builder.Build()
 builder.Services.AddRazorPages();
 
-// 2. Add AppDbContext with PostgreSQL connection
+// 2. Добавление DbContext
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// 3. Настройка TempData (перенесено ДО Build())
+builder.Services.AddSingleton<ITempDataProvider, CookieTempDataProvider>();
+builder.Services.Configure<CookieTempDataProviderOptions>(options => 
+{
+    options.Cookie.IsEssential = true;
+});
+
 var app = builder.Build();
 
-// 3. Error handling for production
+// 4. Middleware pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
 }
 
-// 4. Middlewares
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 
-// 5. Razor Pages routing
 app.MapRazorPages();
 
-// 6. DB Test (optional, for development)
-using (var scope = app.Services.CreateScope())
+// 5. Проверка БД (только для разработки)
+if (app.Environment.IsDevelopment())
 {
-    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-
-    try
+    using (var scope = app.Services.CreateScope())
     {
-        var usersCount = dbContext.Users.Count();
-        Console.WriteLine($"✅ База данных доступна. Пользователей: {usersCount}");
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"❌ Ошибка доступа к БД: {ex.Message}");
+        var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        try
+        {
+            var usersCount = dbContext.Users.Count();
+            Console.WriteLine($"База данных доступна. Пользователей: {usersCount}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Ошибка доступа к БД: {ex.Message}");
+        }
     }
 }
 
