@@ -1,0 +1,30 @@
+@page
+@model LEH.Pages.Notifications.IndexModel
+@{
+ViewData["Title"] = "Notifications";
+}
+
+
+<h1><a asp-page="Create" class="btn btn-success mb-3">+ New Notification</a></h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Type</th>
+        <th>Message</th>
+        <th>Status</th>
+        <th>Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var n in Model.Notifications)
+    {
+    <tr>
+        <td>@n.Type</td>
+        <td>@n.Message</td>
+        <td>@n.Status</td>
+        <td>@n.CreatedAt.ToShortDateString()</td>
+    </tr>
+    }
+    </tbody>
+</table>
